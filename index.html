@@ -63,14 +63,22 @@
     overflow: hidden;
   }
 
-  @media (min-width: 600px) and (min-height: 720px) {
-    #arcade-frame {
-      height: 96dvh;
-      border-radius: 20px;
-      border: 2px solid var(--neon-cyan);
-      box-shadow: 0 0 35px rgba(0, 247, 255, 0.35), inset 0 0 25px rgba(0, 247, 255, 0.12);
-    }
-  }
+  #app-root, #gk-neon-app {
+  width: 100vw !important;
+  height: 100dvh !important;
+  align-items: stretch !important; /* Center ki jagah top-to-bottom stretch karega */
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#arcade-frame, #game-cabinet {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100dvh !important;
+  margin: 0 auto !important;
+  border-radius: 0 !important;
+}
+
 
   /* PLAY STORE STYLE TOP HUD */
   #top-bar {
