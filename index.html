@@ -44,7 +44,7 @@
     height: 100dvh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     background: radial-gradient(circle at center, #081026 0%, #020307 100%);
   }
 
@@ -63,31 +63,14 @@
     overflow: hidden;
   }
 
-  #app-root, #gk-neon-app {
-  width: 100vw !important;
-  height: 100dvh !important;
-  align-items: stretch !important; /* Center ki jagah top-to-bottom stretch karega */
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-#arcade-frame, #game-cabinet {
-  width: 100% !important;
-  height: 100% !important;
-  max-height: 100dvh !important;
-  margin: 0 auto !important;
-  border-radius: 0 !important;
-}
-
-
-  /* PLAY STORE STYLE TOP HUD */
+  /* COMPACT TOP HUD */
   #top-bar {
-    height: 66px;
-    min-height: 66px;
-    padding: 6px 12px;
+    height: 54px;
+    min-height: 54px;
+    padding: 4px 10px;
     background: linear-gradient(180deg, rgba(8, 16, 38, 0.98) 0%, rgba(4, 8, 20, 0.9) 100%);
-    border-bottom: 2px solid var(--neon-cyan);
-    box-shadow: 0 2px 18px rgba(0, 247, 255, 0.35);
+    border-bottom: 1.5px solid var(--neon-cyan);
+    box-shadow: 0 2px 14px rgba(0, 247, 255, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -103,11 +86,12 @@
   .lvl-badge {
     display: flex;
     flex-direction: column;
+    line-height: 1.05;
   }
 
   .lvl-badge .brand {
     font-family: 'Orbitron', sans-serif;
-    font-size: 9px;
+    font-size: 8px;
     letter-spacing: 2px;
     color: var(--neon-pink);
     text-shadow: 0 0 8px var(--neon-pink);
@@ -115,7 +99,7 @@
 
   .lvl-badge .lvl-txt {
     font-family: 'Orbitron', sans-serif;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 900;
     color: #fff;
     text-shadow: 0 0 10px var(--neon-cyan);
@@ -123,29 +107,29 @@
 
   .score-cluster {
     display: flex;
-    gap: 10px;
+    gap: 6px;
     align-items: center;
   }
 
   .score-pill {
     background: rgba(0, 247, 255, 0.08);
     border: 1px solid rgba(0, 247, 255, 0.35);
-    border-radius: 8px;
-    padding: 2px 9px;
+    border-radius: 6px;
+    padding: 1px 7px;
     text-align: center;
-    min-width: 72px;
+    min-width: 60px;
   }
 
   .score-pill .lbl {
-    font-size: 9px;
+    font-size: 8px;
     color: #8eb2db;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
   }
 
   .score-pill .val {
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 800;
     color: #fff;
     text-shadow: 0 0 8px var(--neon-cyan);
@@ -158,24 +142,24 @@
 
   .top-btns {
     display: flex;
-    gap: 6px;
+    gap: 5px;
   }
 
   .hud-icon-btn {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
     border: 1.5px solid var(--neon-cyan);
     background: rgba(0, 247, 255, 0.12);
     color: #fff;
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 800;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+    box-shadow: 0 0 8px rgba(0, 247, 255, 0.25);
   }
 
   .hud-icon-btn:active {
@@ -184,9 +168,9 @@
 
   .progress-track {
     width: 100%;
-    height: 6px;
+    height: 4px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    border-radius: 3px;
     overflow: hidden;
   }
 
@@ -214,12 +198,12 @@
     cursor: crosshair;
   }
 
-  /* FLOATING IN-GAME ACTION BAR (SPEED 2X & RECALL BALLS) */
+  /* FLOATING IN-GAME ACTION BAR (SPEED & RECALL) */
   #volley-controls {
     position: absolute;
-    bottom: 10px;
-    left: 12px;
-    right: 12px;
+    bottom: 6px;
+    left: 10px;
+    right: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -233,12 +217,12 @@
     border: 1.5px solid var(--neon-cyan);
     color: var(--neon-cyan);
     font-family: 'Orbitron', sans-serif;
-    font-size: 11px;
+    font-size: 9.5px;
     font-weight: 800;
-    padding: 6px 12px;
-    border-radius: 20px;
+    padding: 4px 10px;
+    border-radius: 14px;
     cursor: pointer;
-    box-shadow: 0 0 12px rgba(0, 247, 255, 0.35);
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
     transition: 0.15s;
   }
 
@@ -246,23 +230,23 @@
     border-color: var(--neon-pink);
     color: #fff;
     background: rgba(255, 0, 127, 0.28);
-    box-shadow: 0 0 14px rgba(255, 0, 127, 0.45);
+    box-shadow: 0 0 12px rgba(255, 0, 127, 0.4);
   }
 
   .volley-btn:active {
     transform: scale(0.93);
   }
 
-  /* BOTTOM POWER-UP BAR (10 PLAY STORE ABILITIES) */
+  /* COMPACT SQUARE BOTTOM POWER-UP BAR */
   #bottom-bar {
-    height: 82px;
-    min-height: 82px;
+    height: 52px;
+    min-height: 52px;
     background: linear-gradient(0deg, rgba(5, 10, 26, 0.98) 0%, rgba(8, 15, 36, 0.94) 100%);
-    border-top: 2px solid var(--neon-pink);
-    box-shadow: 0 -2px 18px rgba(255, 0, 127, 0.3);
-    padding: 6px 6px;
+    border-top: 1.5px solid var(--neon-pink);
+    box-shadow: 0 -2px 14px rgba(255, 0, 127, 0.25);
+    padding: 4px 6px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
     z-index: 15;
   }
@@ -272,48 +256,56 @@
     grid-template-columns: repeat(10, 1fr);
     gap: 4px;
     width: 100%;
+    max-width: 440px;
+    align-items: center;
+    justify-items: center;
   }
 
+  /* SMALL SQUARE POWER-UP BOXES (1:1 ASPECT RATIO) */
   .pwr-card {
-    height: 64px;
-    border-radius: 8px;
-    background: rgba(12, 22, 50, 0.9);
-    border: 1px solid rgba(0, 247, 255, 0.35);
+    width: 100%;
+    max-width: 38px;
+    aspect-ratio: 1 / 1;
+    border-radius: 6px;
+    background: rgba(12, 22, 50, 0.92);
+    border: 1px solid rgba(0, 247, 255, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    padding: 2px;
+    padding: 1px;
     transition: 0.15s;
   }
 
   .pwr-card:hover, .pwr-card:active {
     border-color: var(--neon-yellow);
-    background: rgba(255, 238, 0, 0.15);
-    box-shadow: 0 0 12px rgba(255, 238, 0, 0.5);
-    transform: translateY(-2px);
+    background: rgba(255, 238, 0, 0.16);
+    box-shadow: 0 0 10px rgba(255, 238, 0, 0.5);
+    transform: scale(0.95);
   }
 
   .pwr-card .ico {
-    font-size: 16px;
-    line-height: 1.1;
-    filter: drop-shadow(0 0 6px currentColor);
+    font-size: 11px;
+    line-height: 1;
+    filter: drop-shadow(0 0 4px currentColor);
   }
 
   .pwr-card .lbl {
-    font-size: 7.5px;
+    font-size: 5.5px;
     font-weight: 700;
     color: #d0e4ff;
     text-transform: uppercase;
-    margin-top: 2px;
+    margin-top: 1px;
+    line-height: 1;
   }
 
   .pwr-card .cost {
     font-family: 'Orbitron', sans-serif;
-    font-size: 8px;
+    font-size: 6px;
     color: var(--neon-yellow);
-    margin-top: 2px;
+    margin-top: 1px;
+    line-height: 1;
   }
 
   /* MODAL SCREENS */
@@ -327,7 +319,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 18px;
+    padding: 16px;
     z-index: 50;
   }
 
@@ -337,20 +329,20 @@
 
   .modal-box {
     width: 100%;
-    max-width: 430px;
+    max-width: 410px;
     background: linear-gradient(160deg, #0a132c 0%, #040814 100%);
     border: 2px solid var(--neon-cyan);
-    border-radius: 18px;
-    padding: 22px 16px;
+    border-radius: 16px;
+    padding: 18px 14px;
     text-align: center;
     box-shadow: 0 0 40px rgba(0, 247, 255, 0.3), inset 0 0 20px rgba(255, 0, 127, 0.15);
-    max-height: 88dvh;
+    max-height: 86dvh;
     overflow-y: auto;
   }
 
   .tag-gk {
     font-family: 'Orbitron', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 3px;
     color: var(--neon-pink);
     text-shadow: 0 0 10px var(--neon-pink);
@@ -359,45 +351,45 @@
 
   .title-main {
     font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 900;
     color: #fff;
     text-shadow: 0 0 14px var(--neon-cyan), 0 0 30px #0066ff;
-    margin: 6px 0;
+    margin: 5px 0;
     line-height: 1.1;
   }
 
   .tagline-sub {
     font-family: 'Orbitron', sans-serif;
-    font-size: 10px;
+    font-size: 9.5px;
     letter-spacing: 1.5px;
     color: var(--neon-yellow);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .stats-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
-    margin: 12px 0;
+    margin: 10px 0;
   }
 
   .stat-tile {
     background: rgba(0, 247, 255, 0.07);
     border: 1px solid rgba(0, 247, 255, 0.3);
     border-radius: 10px;
-    padding: 9px;
+    padding: 8px;
   }
 
   .stat-tile .k {
-    font-size: 10px;
+    font-size: 9.5px;
     color: #9ab8e0;
     text-transform: uppercase;
   }
 
   .stat-tile .v {
     font-family: 'Orbitron', sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 900;
     color: var(--neon-cyan);
     margin-top: 2px;
@@ -406,24 +398,24 @@
   .btn-stack {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 8px;
     margin-top: 10px;
   }
 
   .btn-row-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 9px;
+    gap: 8px;
   }
 
   .arcade-btn {
-    padding: 12px 14px;
+    padding: 11px 12px;
     border-radius: 10px;
     border: 1.5px solid var(--neon-cyan);
     background: rgba(0, 247, 255, 0.14);
     color: #fff;
     font-family: 'Orbitron', sans-serif;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 800;
     cursor: pointer;
     text-transform: uppercase;
@@ -440,35 +432,29 @@
   .arcade-btn.play-cta {
     border-color: var(--neon-pink);
     background: linear-gradient(90deg, rgba(255, 0, 127, 0.45), rgba(184, 41, 255, 0.45));
-    font-size: 15px;
-    padding: 14px;
+    font-size: 14px;
+    padding: 13px;
     box-shadow: 0 0 22px rgba(255, 0, 127, 0.5);
-  }
-
-  .arcade-btn.play-cta:hover {
-    background: var(--neon-pink);
-    color: #fff;
-    box-shadow: 0 0 32px var(--neon-pink);
   }
 
   .lvl-selector-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 7px;
-    max-height: 220px;
+    gap: 6px;
+    max-height: 200px;
     overflow-y: auto;
-    padding: 6px;
-    margin: 10px 0;
+    padding: 5px;
+    margin: 8px 0;
   }
 
   .lvl-btn-item {
-    padding: 9px 4px;
-    border-radius: 8px;
+    padding: 8px 4px;
+    border-radius: 7px;
     border: 1px solid rgba(0, 247, 255, 0.4);
     background: rgba(0, 247, 255, 0.1);
     color: #fff;
     font-family: 'Orbitron', sans-serif;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
     cursor: pointer;
   }
@@ -481,26 +467,26 @@
 
   .scroll-list {
     text-align: left;
-    max-height: 260px;
+    max-height: 240px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin: 10px 0;
+    gap: 7px;
+    margin: 8px 0;
   }
 
   .list-card {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(0, 247, 255, 0.25);
     border-radius: 8px;
-    padding: 8px 10px;
-    font-size: 13px;
+    padding: 7px 9px;
+    font-size: 12px;
     line-height: 1.35;
   }
 
   .list-card strong {
     font-family: 'Orbitron', sans-serif;
-    font-size: 11px;
+    font-size: 10.5px;
     color: var(--neon-cyan);
   }
 </style>
@@ -527,7 +513,7 @@
           </div>
           <div class="score-pill">
             <div class="lbl">STARS ★</div>
-            <div class="val stars" id="ui-stars">100</div>
+            <div class="val stars" id="ui-stars">120</div>
           </div>
         </div>
         <div class="top-btns">
@@ -544,7 +530,7 @@
     <main id="stage-wrap">
       <canvas id="game-canvas"></canvas>
 
-      <!-- FLOATING VOLLEY CONTROLS (PLAY STORE FAST-FORWARD & BALL RECALL) -->
+      <!-- FLOATING VOLLEY CONTROLS -->
       <div id="volley-controls">
         <button class="volley-btn" id="btn-speed-toggle">⏩ SPEED x1</button>
         <button class="volley-btn recall" id="btn-recall-balls" style="display:none;">⬇ RECALL BALLS</button>
@@ -583,15 +569,14 @@
         </div>
       </section>
 
-      <!-- 2. STAGE SELECT (1 TO 1000+) -->
+      <!-- 2. STAGE SELECT -->
       <section class="modal-screen" id="modal-stages">
         <div class="modal-box">
           <div class="tag-gk">UNLIMITED PROCEDURAL STAGES</div>
-          <h2 class="title-main" style="font-size:22px;">SELECT STAGE</h2>
-          <p style="font-size:12px;color:#9ab8e0;">Jump to any Stage (1 to 1000+)</p>
-          <div style="display:flex;gap:8px;justify-content:center;margin:10px 0;">
-            <input type="number" id="inp-stage-num" min="1" max="99999" value="1" style="width:120px;padding:8px;border-radius:8px;border:1px solid var(--neon-cyan);background:#000;color:var(--neon-cyan);font-family:'Orbitron';text-align:center;">
-            <button class="arcade-btn play-cta" id="btn-jump-stage" style="padding:8px 14px;font-size:12px;">GO</button>
+          <h2 class="title-main" style="font-size:21px;">SELECT STAGE</h2>
+          <div style="display:flex;gap:8px;justify-content:center;margin:8px 0;">
+            <input type="number" id="inp-stage-num" min="1" max="99999" value="1" style="width:115px;padding:7px;border-radius:8px;border:1px solid var(--neon-cyan);background:#000;color:var(--neon-cyan);font-family:'Orbitron';text-align:center;">
+            <button class="arcade-btn play-cta" id="btn-jump-stage" style="padding:7px 14px;font-size:11.5px;">GO</button>
           </div>
           <div class="lvl-selector-grid" id="stage-grid"></div>
           <button class="arcade-btn" data-back="modal-menu" style="width:100%;">← BACK</button>
@@ -602,16 +587,11 @@
       <section class="modal-screen" id="modal-guide">
         <div class="modal-box">
           <div class="tag-gk">PLAY STORE MECHANICS</div>
-          <h2 class="title-main" style="font-size:22px;">HOW TO PLAY</h2>
+          <h2 class="title-main" style="font-size:21px;">HOW TO PLAY</h2>
           <div class="scroll-list">
-            <div class="list-card"><strong>1. DRAG TO AIM, RELEASE TO SHOOT:</strong> Touch & drag anywhere on the screen to aim the beaded neon laser sight (`• • • •`). Release your finger to fire a rapid stream of glowing balls!</div>
-            <div class="list-card"><strong>2. FLOOR LANDING & BALL GLIDE-BACK:</strong> Just like Play Store <i>Bricks Breaker Glow</i>, the first ball to hit the bottom floor sets your next launch position! Collect green <b>(+1 / +2 / +3)</b> rings to grow your ball stream!</div>
-            <div class="list-card"><strong>3. SQUARE & 45° TRIANGLE NEON BRICKS:</strong><br>
-              • <b>Square & Triangle Bricks (`◢ ◣ ◤ ◥`):</b> Bounce balls at 90° or 45° angles.<br>
-              • <b>Laser Orbs (`✚` `↔` `↕`):</b> Zap entire rows and columns with neon beams when balls pass through.<br>
-              • <b>Bomb Bricks (`✹`):</b> Explode violently and shatter surrounding 3×3 bricks.<br>
-              • <b>Armored, Rainbow, Gold & ×2 Bricks:</b> Give massive bonus points and multipliers.
-            </div>
+            <div class="list-card"><strong>1. DRAG TO AIM, RELEASE TO SHOOT:</strong> Touch & drag anywhere on the screen to aim the beaded neon sight (`• • • •`). Release to fire a rapid stream of glowing balls!</div>
+            <div class="list-card"><strong>2. FLOOR LANDING & BALL GLIDE-BACK:</strong> The first ball to touch the bottom floor sets your next launch position! Collect green <b>(+2 / +3)</b> rings to grow your ball stream!</div>
+            <div class="list-card"><strong>3. SQUARE & 45° TRIANGLE NEON BRICKS:</strong> Hit Square & 45° Triangle Bricks (`◢ ◣ ◤ ◥`), Laser Orbs (`✚` `↔` `↕`), Bomb Bricks (`✹`), Rainbow, Gold & ×2 Bricks!</div>
           </div>
           <button class="arcade-btn" data-back="modal-menu" style="width:100%;">← BACK</button>
         </div>
@@ -621,7 +601,7 @@
       <section class="modal-screen" id="modal-config">
         <div class="modal-box">
           <div class="tag-gk">SYSTEM OPTIONS</div>
-          <h2 class="title-main" style="font-size:22px;">SETTINGS</h2>
+          <h2 class="title-main" style="font-size:21px;">SETTINGS</h2>
           <div class="btn-stack">
             <button class="arcade-btn" id="btn-opt-music">MUSIC: ON</button>
             <button class="arcade-btn" id="btn-opt-sfx">SOUND FX: ON</button>
@@ -636,7 +616,7 @@
       <section class="modal-screen" id="modal-pause">
         <div class="modal-box">
           <div class="tag-gk">GAME PAUSED</div>
-          <h2 class="title-main" style="font-size:24px;">PAUSED</h2>
+          <h2 class="title-main" style="font-size:23px;">PAUSED</h2>
           <div class="btn-stack">
             <button class="arcade-btn play-cta" id="btn-resume-game">▶ RESUME</button>
             <button class="arcade-btn" id="btn-restart-stage">↻ RESTART STAGE</button>
@@ -650,7 +630,7 @@
       <section class="modal-screen" id="modal-clear">
         <div class="modal-box">
           <div class="tag-gk">STAGE COMPLETE</div>
-          <h2 class="title-main" style="font-size:25px;">STAGE <span id="clr-stage">1</span> CLEARED!</h2>
+          <h2 class="title-main" style="font-size:23px;">STAGE <span id="clr-stage">1</span> CLEARED!</h2>
           <div class="tagline-sub" id="clr-formation">FORMATION MASTERED</div>
           <div class="stats-grid-2">
             <div class="stat-tile"><div class="k">SCORE</div><div class="v" id="clr-score">0</div></div>
@@ -669,7 +649,7 @@
       <section class="modal-screen" id="modal-gameover">
         <div class="modal-box" style="border-color:var(--neon-red);">
           <div class="tag-gk" style="color:var(--neon-red);">BRICKS REACHED THE FLOOR</div>
-          <h2 class="title-main" style="color:var(--neon-red);text-shadow:0 0 20px var(--neon-red);">GAME OVER</h2>
+          <h2 class="title-main" style="color:var(--neon-red);">GAME OVER</h2>
           <div class="stats-grid-2">
             <div class="stat-tile"><div class="k">FINAL SCORE</div><div class="v" id="over-score">0</div></div>
             <div class="stat-tile"><div class="k">BEST SCORE</div><div class="v" style="color:var(--neon-yellow);" id="over-best">0</div></div>
@@ -685,7 +665,7 @@
       <section class="modal-screen" id="modal-trophies">
         <div class="modal-box">
           <div class="tag-gk">GAMERKIE TROPHIES</div>
-          <h2 class="title-main" style="font-size:22px;">ACHIEVEMENTS</h2>
+          <h2 class="title-main" style="font-size:21px;">ACHIEVEMENTS</h2>
           <div class="scroll-list" id="trophies-list"></div>
           <button class="arcade-btn" data-back="modal-menu" style="width:100%;">← BACK</button>
         </div>
@@ -695,15 +675,15 @@
       <section class="modal-screen" id="modal-records">
         <div class="modal-box">
           <div class="tag-gk">HALL OF FAME</div>
-          <h2 class="title-main" style="font-size:22px;">HIGH SCORES</h2>
+          <h2 class="title-main" style="font-size:21px;">HIGH SCORES</h2>
           <div class="stats-grid-2" id="records-summary"></div>
-          <div class="scroll-list" id="records-list" style="max-height:160px;"></div>
+          <div class="scroll-list" id="records-list" style="max-height:150px;"></div>
           <button class="arcade-btn" data-back="modal-menu" style="width:100%;">← BACK</button>
         </div>
       </section>
     </main>
 
-    <!-- BOTTOM POWER-UP BAR -->
+    <!-- COMPACT SQUARE BOTTOM POWER-UP BAR -->
     <footer id="bottom-bar">
       <div id="powerup-grid">
         <button class="pwr-card" data-pwr="multiball">
@@ -753,7 +733,7 @@
         </button>
         <button class="pwr-card" data-pwr="magnet">
           <span class="ico" style="color:#ffee00;">🧲</span>
-          <span class="lbl">ClearRow</span>
+          <span class="lbl">Row</span>
           <span class="cost">16★</span>
         </button>
       </div>
@@ -765,9 +745,6 @@
 (() => {
   'use strict';
 
-  /* =========================================================================
-   * 1. SAVE SYSTEM & ACHIEVEMENTS
-   * ========================================================================= */
   const SAVE_KEY = 'GAMERKIE_NEON_PLAYSTORE_V2';
 
   const TROPHIES = [
@@ -823,9 +800,6 @@
 
   loadData();
 
-  /* =========================================================================
-   * 2. PROCEDURAL WEB AUDIO SYNTHESIZER
-   * ========================================================================= */
   class ArcadeAudio {
     constructor() {
       this.ctx = null;
@@ -859,7 +833,7 @@
     }
     hit(combo) {
       const now = performance.now();
-      if (now - this.lastHitSfx < 28) return; // Prevent audio clipping during 50-ball streams
+      if (now - this.lastHitSfx < 28) return;
       this.lastHitSfx = now;
       const f = 320 * Math.pow(2, Math.min(combo, 28) / 16);
       this.tone(f, f * 1.15, 0.045, 'triangle', 0.09);
@@ -890,16 +864,8 @@
 
   const sfx = new ArcadeAudio();
 
-  /* =========================================================================
-   * 3. PLAY STORE NEON PALETTE & PROCEDURAL STAGE GENERATOR (1 TO 1000+)
-   * ========================================================================= */
   const NEON_PALETTE = [
-    '#00f7ff', // Electric Cyan
-    '#ff007f', // Hot Magenta
-    '#00ff66', // Neon Lime
-    '#ffee00', // Cyber Yellow
-    '#b829ff', // Plasma Purple
-    '#ff5500'  // Solar Orange
+    '#00f7ff', '#ff007f', '#00ff66', '#ffee00', '#b829ff', '#ff5500'
   ];
 
   const FORMATIONS = [
@@ -928,7 +894,6 @@
   let prevFormation = -1;
 
   function getStageBaseHP(stage) {
-    // Authentic Play Store HP scaling: bricks match and challenge your growing ball stream
     if (stage <= 10) return Math.round(10 + stage * 8);
     if (stage <= 30) return Math.round(90 + (stage - 10) * 14);
     if (stage <= 60) return Math.round(370 + (stage - 30) * 20);
@@ -936,38 +901,40 @@
     return Math.round(2010 + Math.pow(stage - 100, 0.95) * 30);
   }
 
+  /* 9 COLUMNS FOR SMALLER, PERFECTLY SQUARE BRICKS */
+  const COLS = 9;
+  const SPAWN_ROWS = 7;
+
   function buildStage(stage) {
     const rng = mulberry32((stage * 0x9E3779B9) ^ 0x85EBCA6B ^ game.salt);
     let fIdx = (stage - 1) % FORMATIONS.length;
     if (fIdx === prevFormation) fIdx = (fIdx + 1 + Math.floor(rng() * 8)) % FORMATIONS.length;
     prevFormation = fIdx;
 
-    const cols = 8;
-    const spawnRows = 7;
     const baseHP = getStageBaseHP(stage);
     const bricks = [];
-    const items = []; // +Ball pickups, In-grid Lasers, Stars
+    const items = [];
 
-    const c0 = (cols - 1) / 2;
-    const r0 = (spawnRows - 1) / 2;
+    const c0 = (COLS - 1) / 2;
+    const r0 = (SPAWN_ROWS - 1) / 2;
 
-    for (let r = 0; r < spawnRows; r++) {
-      for (let c = 0; c < cols; c++) {
+    for (let r = 0; r < SPAWN_ROWS; r++) {
+      for (let c = 0; c < COLS; c++) {
         const dc = c - c0;
         const dr = r - r0;
         let active = false;
 
         switch (fIdx) {
-          case 0: active = Math.max(Math.abs(dc), Math.abs(dr)) <= 3.2 && !(Math.abs(dc) === 1.5 && Math.abs(dr) === 1.5); break;
-          case 1: active = Math.abs(dc) <= (spawnRows - 1 - r) * 0.55 + 0.4; break;
-          case 2: active = (Math.abs(dc) + Math.abs(dr)) <= 3.8; break;
+          case 0: active = Math.max(Math.abs(dc), Math.abs(dr)) <= 3.5 && !(Math.abs(dc) === 2 && Math.abs(dr) === 1.5); break;
+          case 1: active = Math.abs(dc) <= (SPAWN_ROWS - 1 - r) * 0.6 + 0.4; break;
+          case 2: active = (Math.abs(dc) + Math.abs(dr)) <= 4.2; break;
           case 3: active = Math.sin(Math.hypot(dc, dr) * 1.9 - Math.atan2(dr, dc) * 1.5) > -0.2; break;
-          case 4: active = ((c + (r % 2 === 0 ? r : -r) + 10) % 3) !== 0; break;
-          case 5: active = r >= 1 && Math.abs(dc) <= r * 0.6; break;
-          case 6: { const d2 = dc * dc + dr * dr; active = (d2 >= 1.8 && d2 <= 13.5) || d2 < 0.6; break; }
+          case 4: active = ((c + (r % 2 === 0 ? r : -r) + 12) % 3) !== 0; break;
+          case 5: active = r >= 1 && Math.abs(dc) <= r * 0.65; break;
+          case 6: { const d2 = dc * dc + dr * dr; active = (d2 >= 2.0 && d2 <= 15.5) || d2 < 0.6; break; }
           case 7: active = rng() < 0.62; break;
           case 8: {
-            const mc = c < 4 ? c : 7 - c;
+            const mc = c <= 4 ? c : (COLS - 1) - c;
             const h = Math.sin((mc + 1) * 19.1 + (r + 1) * 47.3 + stage) * 10000;
             active = (h - Math.floor(h)) > 0.35;
             break;
@@ -976,7 +943,6 @@
         }
 
         if (!active) {
-          // Place Play Store style +Ball green rings, Laser orbs, or Stars in empty spaces
           const itemRoll = rng();
           if (itemRoll < 0.14) {
             items.push({ c, r, kind: 'addball', val: stage > 30 ? 3 : 2, pulse: rng() * 6 });
@@ -989,16 +955,14 @@
           continue;
         }
 
-        // Determine Brick Shape: Square or 45-degree Play Store Neon Triangle ('TL','TR','BL','BR')
         let shape = 'square';
         if (rng() < 0.24) {
           if (c < 4 && r % 2 === 0) shape = 'BL';
-          else if (c >= 4 && r % 2 === 0) shape = 'BR';
+          else if (c > 4 && r % 2 === 0) shape = 'BR';
           else if (c < 4) shape = 'TL';
           else shape = 'TR';
         }
 
-        // Determine Brick Special Type
         let bType = 'normal';
         const tRoll = rng();
         if (tRoll < 0.075) bType = 'explosive';
@@ -1034,15 +998,8 @@
     };
   }
 
-  /* =========================================================================
-   * 4. CORE PLAY STORE BALL-SHOOTER ENGINE STATE
-   * ========================================================================= */
   const canvas = document.getElementById('game-canvas');
   const ctx = canvas.getContext('2d');
-
-  const COLS = 8;
-  const ROWS = 11;
-  const DANGER_ROW = 9; // Row index where bricks hit the floor
 
   const game = {
     mode: 'MENU',
@@ -1055,30 +1012,27 @@
     mult: 1,
     salt: 0,
 
-    // Play Store Ball Stream & Floor Glide-Back State
-    phase: 'AIM', // 'AIM' | 'SHOOTING'
+    phase: 'AIM',
     totalBalls: 25,
     ballsRemainingToEmit: 0,
     emitCooldown: 0,
-    emitOriginX: 200, // Locked while shooting!
-    nextOriginX: null, // Set by the FIRST ball that lands on the bottom floor!
+    emitOriginX: 200,
+    nextOriginX: null,
     returnedCount: 0,
     aimAngle: -Math.PI / 2,
     isDraggingAim: false,
     launchDir: { x: 0, y: -1 },
 
-    // Entities
     bricks: [],
     totalInitialBricks: 1,
     items: [],
     balls: [],
-    glidingBalls: [], // Balls visibly sliding along the floor back to nextOriginX!
+    glidingBalls: [],
     particles: [],
     beams: [],
     bolts: [],
     popups: [],
 
-    // Power-up states
     speedMultiplier: 1,
     userFastForward: 1,
     volleyElapsed: 0,
@@ -1087,8 +1041,8 @@
     shakeTimer: 0,
     shakePower: 0,
 
-    // Board metrics
-    box: { w: 420, h: 620, padX: 12, padY: 16, cellW: 48, cellH: 42, floorY: 560 }
+    /* dangerRow dynamically calculated so bricks stay 1:1 SQUARE */
+    box: { w: 420, h: 620, padX: 10, padY: 10, cellW: 40, cellH: 40, floorY: 560, dangerRow: 11 }
   };
 
   function updateLayout() {
@@ -1101,14 +1055,17 @@
 
     const w = rect.width;
     const h = rect.height;
-    const padX = 12;
-    const padY = 14;
-    const floorY = h - 46;
+    const padX = 10;
+    const padY = 10;
+    const floorY = h - 38;
+
+    /* 1:1 STRICT SQUARE BRICK SIZING (cellH = cellW) */
     const cellW = (w - padX * 2) / COLS;
-    const cellH = (floorY - padY - 20) / (DANGER_ROW + 1);
+    const cellH = cellW;
+    const dangerRow = Math.max(9, Math.floor((floorY - padY) / cellH) - 1);
 
     const prevW = game.box.w || w;
-    game.box = { w, h, padX, padY, cellW, cellH, floorY };
+    game.box = { w, h, padX, padY, cellW, cellH, floorY, dangerRow };
     game.emitOriginX = (game.emitOriginX / prevW) * w;
     game.emitOriginX = Math.max(padX + 20, Math.min(w - padX - 20, game.emitOriginX || w / 2));
   }
@@ -1117,12 +1074,13 @@
 
   function getBrickBounds(b) {
     const { padX, padY, cellW, cellH } = game.box;
-    const m = 3;
+    const m = 2.2;
+    const size = Math.min(cellW, cellH) - m * 2;
     return {
-      x: padX + b.c * cellW + m,
-      y: padY + b.r * cellH + m,
-      w: cellW - m * 2,
-      h: cellH - m * 2
+      x: padX + b.c * cellW + (cellW - size) / 2,
+      y: padY + b.r * cellH + (cellH - size) / 2,
+      w: size,
+      h: size
     };
   }
 
@@ -1134,9 +1092,6 @@
     };
   }
 
-  /* =========================================================================
-   * 5. VFX HELPERS
-   * ========================================================================= */
   function burstParticles(x, y, color, count = 14) {
     for (let i = 0; i < count; i++) {
       if (game.particles.length > 360) game.particles.shift();
@@ -1165,9 +1120,6 @@
     game.shakeTimer = Math.max(game.shakeTimer, dur);
   }
 
-  /* =========================================================================
-   * 6. BRICK DAMAGE, IN-GRID LASERS & EXPLOSIONS
-   * ========================================================================= */
   function hitBrick(b, dmg) {
     if (!b || b.hp <= 0) return false;
     b.hp -= dmg;
@@ -1251,9 +1203,6 @@
     game.bricks = game.bricks.filter(b => b.hp > 0);
   }
 
-  /* =========================================================================
-   * 7. 10 PLAY STORE POWER-UPS
-   * ========================================================================= */
   const PWR_COSTS = {
     multiball: 10, laser: 12, lightning: 15, fireball: 15, explosion: 18,
     speed: 8, slow: 8, addballs: 14, shield: 12, magnet: 16
@@ -1279,7 +1228,7 @@
         cloneSource.forEach(b => {
           for (let i = 0; i < 2; i++) {
             const a = -Math.PI / 2 + (Math.random() - 0.5) * 1.2;
-            game.balls.push({ x: b.x, y: b.y, vx: Math.cos(a) * 560, vy: Math.sin(a) * 560, r: 5.5, trail: [] });
+            game.balls.push({ x: b.x, y: b.y, vx: Math.cos(a) * 560, vy: Math.sin(a) * 560, r: 5, trail: [] });
           }
         });
         if (game.phase === 'AIM') game.phase = 'SHOOTING';
@@ -1290,7 +1239,7 @@
         sfx.laser();
         shakeScreen(6, 0.2);
         const dmg = Math.max(25, Math.round(getStageBaseHP(game.stage) * 0.75));
-        [-22, 0, 22].forEach(off => {
+        [-20, 0, 20].forEach(off => {
           const bx = ox + off;
           game.beams.push({ x1: bx, y1: oy, x2: bx, y2: 0, color: '#ff007f', life: 0.32 });
           game.bricks.slice().forEach(b => {
@@ -1349,7 +1298,6 @@
         addPopup(ox, oy - 35, 'BOTTOM BOUNCE SHIELD!', '#00f7ff');
         break;
       case 'magnet': {
-        // Clear lowest danger row of bricks + collect all items!
         let maxR = -1;
         game.bricks.forEach(b => { if (b.r > maxR) maxR = b.r; });
         if (maxR >= 0) {
@@ -1372,9 +1320,6 @@
     checkStageClear();
   }
 
-  /* =========================================================================
-   * 8. STAGE START, ROW DESCENT & CLEAR CHECK
-   * ========================================================================= */
   function startStage(stg) {
     updateLayout();
     game.stage = Math.max(1, parseInt(stg, 10) || 1);
@@ -1454,18 +1399,16 @@
     game.speedMultiplier = 1;
     game.combo = 1;
 
-    // Reset laser orbs and remove activated ones
     game.items = game.items.filter(it => !it.triggeredThisTurn);
 
     if (checkStageClear()) return;
 
-    // Move all bricks & items down 1 row
+    const dRow = game.box.dangerRow;
     game.bricks.forEach(b => { b.r += 1; });
     game.items.forEach(it => { it.r += 1; });
 
-    // Auto-collect +Ball rings that reach the floor
     game.items = game.items.filter(it => {
-      if (it.r >= DANGER_ROW) {
+      if (it.r >= dRow) {
         if (it.kind === 'addball') {
           game.totalBalls += it.val;
           addPopup(game.emitOriginX, game.box.floorY - 25, `+${it.val} BALLS`, '#00ff66');
@@ -1475,8 +1418,7 @@
       return true;
     });
 
-    // Check if any brick hit the floor line
-    const breached = game.bricks.some(b => b.r >= DANGER_ROW);
+    const breached = game.bricks.some(b => b.r >= dRow);
     if (breached) {
       game.mode = 'OVER';
       sfx.boom();
@@ -1492,11 +1434,8 @@
     syncUI();
   }
 
-  /* =========================================================================
-   * 9. PLAY STORE PHYSICS: 45° TRIANGLE DEFLECTION & BEADED AIM RAYCAST
-   * ========================================================================= */
   function raycastAimPath(ox, oy, dx, dy) {
-    const { padX, padY, w, floorY } = game.box;
+    const { padX, padY, w } = game.box;
     const minX = padX + 5;
     const maxX = w - padX - 5;
     const minY = padY + 5;
@@ -1516,7 +1455,7 @@
       if (t > 0 && t < bestT) { bestT = t; nx = 0; ny = 1; }
     }
 
-    const r = 5.5;
+    const r = 5;
     for (let i = 0; i < game.bricks.length; i++) {
       const b = game.bricks[i];
       if (b.hp <= 0) continue;
@@ -1578,22 +1517,20 @@
     if (game.mode !== 'PLAY' || game.paused) return;
 
     const { padX, padY, w, floorY } = game.box;
-    const minWallX = padX + 5.5;
-    const maxWallX = w - padX - 5.5;
-    const minWallY = padY + 5.5;
+    const minWallX = padX + 5;
+    const maxWallX = w - padX - 5;
+    const minWallY = padY + 5;
 
-    // Auto speed-up if volley takes more than 4.5 seconds
     if (game.phase === 'SHOOTING') {
       game.volleyElapsed += dt;
     }
     const autoBoost = game.volleyElapsed > 4.5 ? 1.8 : 1.0;
     const totalSpeedScale = game.speedMultiplier * game.userFastForward * autoBoost;
 
-    // Rapid Play Store Ball Stream Emitter (Locked at emitOriginX!)
     if (game.phase === 'SHOOTING' && game.ballsRemainingToEmit > 0) {
       game.emitCooldown -= dt * game.userFastForward;
       while (game.emitCooldown <= 0 && game.ballsRemainingToEmit > 0) {
-        game.emitCooldown += 0.038; // Fast, tight stream!
+        game.emitCooldown += 0.038;
         game.ballsRemainingToEmit--;
         const baseSpd = 560;
         game.balls.push({
@@ -1601,14 +1538,13 @@
           y: floorY - 7,
           vx: game.launchDir.x * baseSpd,
           vy: game.launchDir.y * baseSpd,
-          r: 5.5,
+          r: 5,
           trail: []
         });
         sfx.shoot();
       }
     }
 
-    // Update Active Airborne Balls
     for (let i = game.balls.length - 1; i >= 0; i--) {
       const b = game.balls[i];
       b.trail.push({ x: b.x, y: b.y });
@@ -1626,15 +1562,12 @@
         b.x += vx * sdt;
         b.y += vy * sdt;
 
-        // Play Store Neon Frame Wall Bounces
         if (b.x < minWallX) { b.x = minWallX; b.vx = Math.abs(b.vx); preventFlatLoop(b); }
         else if (b.x > maxWallX) { b.x = maxWallX; b.vx = -Math.abs(b.vx); preventFlatLoop(b); }
         if (b.y < minWallY) { b.y = minWallY; b.vy = Math.abs(b.vy); preventFlatLoop(b); }
 
-        // Bottom Floor Contact
         if (b.vy > 0 && b.y >= floorY - 6) {
           if (game.bounceShield) {
-            // Shield bounces balls back upward once per volley
             b.y = floorY - 6;
             b.vy = -Math.abs(b.vy);
             burstParticles(b.x, b.y, '#00f7ff', 6);
@@ -1644,11 +1577,10 @@
           }
         }
 
-        // Check Pickups (+Ball Rings, In-Grid Laser Orbs, Stars)
         for (let k = game.items.length - 1; k >= 0; k--) {
           const it = game.items[k];
           const pos = getItemCenter(it);
-          if (Math.hypot(b.x - pos.x, b.y - pos.y) <= b.r + 12) {
+          if (Math.hypot(b.x - pos.x, b.y - pos.y) <= b.r + 10) {
             if (it.kind === 'addball') {
               game.totalBalls += it.val;
               sfx.pickup();
@@ -1668,18 +1600,15 @@
           }
         }
 
-        // Check Brick Collisions (Square & 45° Triangle Bricks)
         for (let j = 0; j < game.bricks.length; j++) {
           const br = game.bricks[j];
           if (br.hp <= 0) continue;
           const rect = getBrickBounds(br);
 
-          // Broad-phase AABB check
           const cx = Math.max(rect.x, Math.min(b.x, rect.x + rect.w));
           const cy = Math.max(rect.y, Math.min(b.y, rect.y + rect.h));
           if ((b.x - cx) ** 2 + (b.y - cy) ** 2 > b.r * b.r) continue;
 
-          // If 45° Triangle Brick, check hypotenuse reflection
           const relX = (b.x - rect.x) / rect.w;
           const relY = (b.y - rect.y) / rect.h;
           let hitHypotenuse = false;
@@ -1722,20 +1651,17 @@
         }
       }
 
-      // Play Store Floor Landing & Glide-Back
       if (landedOnFloor) {
         game.balls.splice(i, 1);
         game.returnedCount++;
         if (game.nextOriginX === null) {
           game.nextOriginX = Math.max(minWallX + 12, Math.min(maxWallX - 12, b.x));
         } else {
-          // Spawn a gliding ball on the floor that slides smoothly to nextOriginX!
           game.glidingBalls.push({ x: b.x, targetX: game.nextOriginX });
         }
       }
     }
 
-    // Update Gliding Floor Balls
     for (let i = game.glidingBalls.length - 1; i >= 0; i--) {
       const g = game.glidingBalls[i];
       const diff = g.targetX - g.x;
@@ -1749,12 +1675,10 @@
     game.bricks = game.bricks.filter(b => b.hp > 0);
     if (checkStageClear()) return;
 
-    // End Volley when all balls have landed on the floor
     if (game.phase === 'SHOOTING' && game.ballsRemainingToEmit === 0 && game.balls.length === 0 && game.glidingBalls.length === 0) {
       endVolleyAndDescend();
     }
 
-    // Decay VFX
     game.bricks.forEach(b => { if (b.flash > 0) b.flash = Math.max(0, b.flash - dt); });
     game.particles.forEach(p => { p.x += p.vx * dt; p.y += p.vy * dt; p.life -= dt; });
     game.particles = game.particles.filter(p => p.life > 0);
@@ -1767,13 +1691,10 @@
     if (game.shakeTimer > 0) game.shakeTimer = Math.max(0, game.shakeTimer - dt);
   }
 
-  /* =========================================================================
-   * 10. AUTHENTIC PLAY STORE NEON TUBE RENDERER
-   * ========================================================================= */
   function traceBrickPath(ctx, shape, x, y, w, h) {
     ctx.beginPath();
     if (shape === 'square') {
-      ctx.roundRect(x, y, w, h, 5);
+      ctx.roundRect(x, y, w, h, 4);
     } else if (shape === 'BL') {
       ctx.moveTo(x, y);
       ctx.lineTo(x + w, y + h);
@@ -1806,7 +1727,7 @@
   }
 
   function renderScene(now) {
-    const { w, h, padX, padY, cellW, cellH, floorY } = game.box;
+    const { w, h, padX, padY, cellW, cellH, floorY, dangerRow } = game.box;
     ctx.save();
     ctx.clearRect(0, 0, w, h);
 
@@ -1814,7 +1735,7 @@
       ctx.translate((Math.random() - 0.5) * game.shakePower * 2, (Math.random() - 0.5) * game.shakePower * 2);
     }
 
-    // 1. Subtle Cyber Grid Background
+    // 1. Square Cyber Grid Background
     ctx.strokeStyle = 'rgba(0, 247, 255, 0.04)';
     ctx.lineWidth = 1;
     ctx.beginPath();
@@ -1822,18 +1743,20 @@
       const gx = padX + c * cellW;
       ctx.moveTo(gx, padY); ctx.lineTo(gx, floorY);
     }
-    for (let r = 0; r <= DANGER_ROW; r++) {
+    for (let r = 0; r <= dangerRow; r++) {
       const gy = padY + r * cellH;
-      ctx.moveTo(padX, gy); ctx.lineTo(w - padX, gy);
+      if (gy <= floorY) {
+        ctx.moveTo(padX, gy); ctx.lineTo(w - padX, gy);
+      }
     }
     ctx.stroke();
 
-    // 2. Play Store Outer Neon Tube Frame & Floor Line
+    // 2. Outer Neon Tube Frame & Floor Line
     ctx.save();
     ctx.shadowColor = '#00f7ff';
-    ctx.shadowBlur = 12;
+    ctx.shadowBlur = 10;
     ctx.strokeStyle = '#00f7ff';
-    ctx.lineWidth = 2.5;
+    ctx.lineWidth = 2.2;
     ctx.beginPath();
     ctx.moveTo(padX, floorY);
     ctx.lineTo(padX, padY);
@@ -1841,17 +1764,16 @@
     ctx.lineTo(w - padX, floorY);
     ctx.stroke();
 
-    // Glowing Bottom Floor Line
     ctx.shadowColor = game.bounceShield ? '#00ff66' : '#ff007f';
     ctx.strokeStyle = game.bounceShield ? '#00ff66' : 'rgba(255, 0, 127, 0.85)';
-    ctx.lineWidth = game.bounceShield ? 4 : 2;
+    ctx.lineWidth = game.bounceShield ? 3.5 : 2;
     ctx.beginPath();
     ctx.moveTo(padX, floorY);
     ctx.lineTo(w - padX, floorY);
     ctx.stroke();
     ctx.restore();
 
-    // 3. Render Real Glowing Neon Bricks (Square + 45° Triangles)
+    // 3. Render 1:1 Square & 45° Triangle Glowing Neon Bricks
     const hueShift = (now * 0.15) % 360;
     for (let i = 0; i < game.bricks.length; i++) {
       const b = game.bricks[i];
@@ -1862,28 +1784,24 @@
       ctx.save();
       traceBrickPath(ctx, b.shape, rect.x, rect.y, rect.w, rect.h);
 
-      // Dark Glossy Interior
       ctx.fillStyle = b.flash > 0 ? 'rgba(255,255,255,0.85)' : 'rgba(4, 10, 26, 0.86)';
       ctx.fill();
 
-      // Outer Colored Neon Glow Tube
       ctx.shadowColor = col;
-      ctx.shadowBlur = 11;
+      ctx.shadowBlur = 9;
       ctx.strokeStyle = b.flash > 0 ? '#ffffff' : col;
-      ctx.lineWidth = b.bType === 'armored' ? 3.2 : 2.4;
+      ctx.lineWidth = b.bType === 'armored' ? 2.8 : 2.1;
       ctx.stroke();
 
-      // Inner White-Hot Neon Core Rim
       ctx.shadowBlur = 0;
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.55)';
-      ctx.lineWidth = 0.8;
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+      ctx.lineWidth = 0.7;
       ctx.stroke();
       ctx.restore();
 
-      // Crisp Durability Number & Special Icon
       const { tx, ty } = brickTextCenter(b.shape, rect.x, rect.y, rect.w, rect.h);
       ctx.fillStyle = '#ffffff';
-      ctx.font = b.shape === 'square' ? '800 12px Orbitron, sans-serif' : '800 10px Orbitron, sans-serif';
+      ctx.font = b.shape === 'square' ? '800 10px Orbitron, sans-serif' : '800 8.5px Orbitron, sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
@@ -1897,43 +1815,43 @@
       ctx.fillText(prefix + b.hp, tx, ty);
     }
 
-    // 4. Render In-Grid Items (+Ball Green Rings, Laser Orbs, Stars)
+    // 4. In-Grid Items
     game.items.forEach(it => {
       const pos = getItemCenter(it);
       const pulse = 1 + Math.sin(now * 0.008 + it.pulse) * 0.14;
       ctx.save();
       if (it.kind === 'addball') {
         ctx.shadowColor = '#00ff66';
-        ctx.shadowBlur = 10;
+        ctx.shadowBlur = 9;
         ctx.strokeStyle = '#00ff66';
-        ctx.lineWidth = 2.5;
+        ctx.lineWidth = 2.2;
         ctx.beginPath();
-        ctx.arc(pos.x, pos.y, 12 * pulse, 0, Math.PI * 2);
+        ctx.arc(pos.x, pos.y, 10 * pulse, 0, Math.PI * 2);
         ctx.stroke();
         ctx.fillStyle = '#00ff66';
-        ctx.font = '800 10px Orbitron, sans-serif';
+        ctx.font = '800 9px Orbitron, sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(`+${it.val}`, pos.x, pos.y + 1);
       } else if (it.kind === 'laser_orb') {
         ctx.shadowColor = '#00f7ff';
-        ctx.shadowBlur = 12;
+        ctx.shadowBlur = 10;
         ctx.strokeStyle = '#00f7ff';
-        ctx.lineWidth = 2.2;
+        ctx.lineWidth = 2;
         ctx.beginPath();
-        ctx.arc(pos.x, pos.y, 12 * pulse, 0, Math.PI * 2);
+        ctx.arc(pos.x, pos.y, 10 * pulse, 0, Math.PI * 2);
         ctx.stroke();
         ctx.fillStyle = '#ffffff';
-        ctx.font = '800 13px Orbitron, sans-serif';
+        ctx.font = '800 11px Orbitron, sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         const sym = it.dir === 'cross' ? '✚' : (it.dir === 'horiz' ? '↔' : '↕');
         ctx.fillText(sym, pos.x, pos.y + 1);
       } else if (it.kind === 'star') {
         ctx.shadowColor = '#ffee00';
-        ctx.shadowBlur = 10;
+        ctx.shadowBlur = 9;
         ctx.fillStyle = '#ffee00';
-        ctx.font = '800 16px Orbitron, sans-serif';
+        ctx.font = '800 14px Orbitron, sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText('★', pos.x, pos.y);
@@ -1941,7 +1859,7 @@
       ctx.restore();
     });
 
-    // 5. Play Store Beaded Neon Aiming Line (• • • • •)
+    // 5. Beaded Aiming Line
     if (game.phase === 'AIM' && game.mode === 'PLAY') {
       const dx = Math.cos(game.aimAngle);
       const dy = Math.sin(game.aimAngle);
@@ -1952,81 +1870,75 @@
       ctx.shadowBlur = 10;
       ctx.fillStyle = '#ffffff';
 
-      // Draw glowing beads along primary ray
       const dist1 = Math.hypot(hit.hx - game.emitOriginX, hit.hy - (floorY - 7));
-      const stepPx = 16;
-      for (let d = 18; d < dist1; d += stepPx) {
+      const stepPx = 15;
+      for (let d = 16; d < dist1; d += stepPx) {
         const bx = game.emitOriginX + dx * d;
         const by = (floorY - 7) + dy * d;
         ctx.beginPath();
-        ctx.arc(bx, by, 3, 0, Math.PI * 2);
+        ctx.arc(bx, by, 2.8, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      // Draw glowing beads along reflected bounce ray
       ctx.fillStyle = '#00f7ff';
-      for (let d = 14; d <= 125; d += stepPx) {
+      for (let d = 14; d <= 115; d += stepPx) {
         const bx = hit.hx + hit.rx * d;
         const by = hit.hy + hit.ry * d;
         if (bx < padX || bx > w - padX || by < padY || by > floorY) break;
         ctx.beginPath();
-        ctx.arc(bx, by, 2.4, 0, Math.PI * 2);
+        ctx.arc(bx, by, 2.2, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      // Impact ring
       ctx.strokeStyle = '#ff007f';
       ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.arc(hit.hx, hit.hy, 6, 0, Math.PI * 2);
+      ctx.arc(hit.hx, hit.hy, 5.5, 0, Math.PI * 2);
       ctx.stroke();
       ctx.restore();
     }
 
-    // 6. Launcher Origin & Next Floor Landing Marker
+    // 6. Launcher Origin & Floor Landing Marker
     ctx.save();
-    // Current Launcher Ball + 'xCount' Label
     const showRemaining = game.phase === 'AIM' ? game.totalBalls : game.ballsRemainingToEmit;
     if (showRemaining > 0) {
       ctx.shadowColor = '#00f7ff';
-      ctx.shadowBlur = 12;
+      ctx.shadowBlur = 10;
       ctx.fillStyle = '#ffffff';
       ctx.beginPath();
-      ctx.arc(game.emitOriginX, floorY - 7, 7, 0, Math.PI * 2);
+      ctx.arc(game.emitOriginX, floorY - 6, 6.5, 0, Math.PI * 2);
       ctx.fill();
 
       ctx.fillStyle = '#00f7ff';
-      ctx.font = '800 12px Orbitron, sans-serif';
+      ctx.font = '800 11px Orbitron, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(`x${showRemaining}`, game.emitOriginX, floorY + 18);
+      ctx.fillText(`x${showRemaining}`, game.emitOriginX, floorY + 15);
     }
 
-    // Next Turn Landing Anchor (where 1st ball touched the floor)
     if (game.nextOriginX !== null) {
       ctx.shadowColor = '#00ff66';
-      ctx.shadowBlur = 12;
+      ctx.shadowBlur = 10;
       ctx.strokeStyle = '#00ff66';
-      ctx.lineWidth = 2.2;
+      ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.arc(game.nextOriginX, floorY - 7, 8, 0, Math.PI * 2);
+      ctx.arc(game.nextOriginX, floorY - 6, 7.5, 0, Math.PI * 2);
       ctx.stroke();
 
       ctx.fillStyle = '#ffffff';
       ctx.beginPath();
-      ctx.arc(game.nextOriginX, floorY - 7, 4.5, 0, Math.PI * 2);
+      ctx.arc(game.nextOriginX, floorY - 6, 4, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    // Gliding balls sliding back along the floor
     ctx.fillStyle = '#00ff66';
     game.glidingBalls.forEach(g => {
       ctx.beginPath();
-      ctx.arc(g.x, floorY - 6, 4.5, 0, Math.PI * 2);
+      ctx.arc(g.x, floorY - 6, 4, 0, Math.PI * 2);
       ctx.fill();
     });
     ctx.restore();
 
-    // 7. Additive Glowing Pass for Airborne Balls, Lasers, Lightning & Particles
+    // 7. Additive Pass for Balls, Lasers, Lightning & Particles
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
 
@@ -2035,7 +1947,7 @@
       const b = game.balls[i];
       if (b.trail.length > 1) {
         ctx.strokeStyle = ballHue;
-        ctx.lineWidth = 3;
+        ctx.lineWidth = 2.8;
         ctx.beginPath();
         ctx.moveTo(b.trail[0].x, b.trail[0].y);
         for (let t = 1; t < b.trail.length; t++) ctx.lineTo(b.trail[t].x, b.trail[t].y);
@@ -2043,7 +1955,7 @@
       }
       ctx.fillStyle = ballHue;
       ctx.beginPath();
-      ctx.arc(b.x, b.y, b.r + 1.8, 0, Math.PI * 2);
+      ctx.arc(b.x, b.y, b.r + 1.5, 0, Math.PI * 2);
       ctx.fill();
 
       ctx.fillStyle = '#ffffff';
@@ -2052,37 +1964,34 @@
       ctx.fill();
     }
 
-    // Laser Beams
     game.beams.forEach(bm => {
       ctx.strokeStyle = bm.color;
-      ctx.lineWidth = 10 * (bm.life / 0.25);
+      ctx.lineWidth = 9 * (bm.life / 0.25);
       ctx.beginPath();
       ctx.moveTo(bm.x1, bm.y1); ctx.lineTo(bm.x2, bm.y2);
       ctx.stroke();
 
       ctx.strokeStyle = '#ffffff';
-      ctx.lineWidth = 3;
+      ctx.lineWidth = 2.5;
       ctx.stroke();
     });
 
-    // Lightning Bolts
     game.bolts.forEach(bt => {
       ctx.strokeStyle = '#ffee00';
-      ctx.lineWidth = 2.5;
+      ctx.lineWidth = 2.2;
       ctx.beginPath();
       ctx.moveTo(bt.x1, bt.y1);
       for (let s = 1; s < 5; s++) {
         const t = s / 5;
         ctx.lineTo(
-          bt.x1 + (bt.x2 - bt.x1) * t + (Math.random() - 0.5) * 20,
-          bt.y1 + (bt.y2 - bt.y1) * t + (Math.random() - 0.5) * 20
+          bt.x1 + (bt.x2 - bt.x1) * t + (Math.random() - 0.5) * 18,
+          bt.y1 + (bt.y2 - bt.y1) * t + (Math.random() - 0.5) * 18
         );
       }
       ctx.lineTo(bt.x2, bt.y2);
       ctx.stroke();
     });
 
-    // Particles
     for (let i = 0; i < game.particles.length; i++) {
       const p = game.particles[i];
       ctx.fillStyle = p.color;
@@ -2096,7 +2005,7 @@
     game.popups.forEach(pp => {
       ctx.save();
       ctx.globalAlpha = Math.max(0, pp.life / pp.maxLife);
-      ctx.font = '800 12px Orbitron, sans-serif';
+      ctx.font = '800 11px Orbitron, sans-serif';
       ctx.fillStyle = pp.color;
       ctx.textAlign = 'center';
       ctx.fillText(pp.txt, pp.x, pp.y);
@@ -2106,9 +2015,6 @@
     ctx.restore();
   }
 
-  /* =========================================================================
-   * 11. CONTROLS & UI WIRING
-   * ========================================================================= */
   function syncUI() {
     document.getElementById('ui-level').textContent = `STAGE ${game.stage}`;
     document.getElementById('ui-score').textContent = game.score.toLocaleString();
@@ -2148,7 +2054,7 @@
 
     let dx = px - ox;
     let dy = py - oy;
-    if (dy > -16) dy = -16; // Clamp to upward angles so balls never shoot into the floor
+    if (dy > -16) dy = -16;
     const ang = Math.atan2(dy, dx);
     game.aimAngle = Math.max(-Math.PI + 0.13, Math.min(-0.13, ang));
   }
@@ -2174,7 +2080,6 @@
     }
   });
 
-  // Fast-Forward Speed Button (x1 -> x2 -> x4)
   document.getElementById('btn-speed-toggle').addEventListener('click', () => {
     if (game.userFastForward === 1) game.userFastForward = 2;
     else if (game.userFastForward === 2) game.userFastForward = 4;
@@ -2182,7 +2087,6 @@
     document.getElementById('btn-speed-toggle').textContent = `⏩ SPEED x${game.userFastForward}`;
   });
 
-  // Instant Recall Button
   document.getElementById('btn-recall-balls').addEventListener('click', () => {
     if (game.mode === 'PLAY' && game.phase === 'SHOOTING') {
       game.balls = [];
@@ -2192,7 +2096,6 @@
     }
   });
 
-  // Power-Up Buttons
   document.querySelectorAll('.pwr-card').forEach(btn => {
     btn.addEventListener('click', () => {
       sfx.init();
@@ -2200,7 +2103,6 @@
     });
   });
 
-  // Menu & Modal Navigation
   document.getElementById('btn-start-play').addEventListener('click', () => {
     sfx.init();
     startStage(save.currentStage || 1);
@@ -2355,9 +2257,6 @@
     });
   });
 
-  /* =========================================================================
-   * 12. MAIN GAME LOOP
-   * ========================================================================= */
   let lastT = performance.now();
   updateLayout();
   syncUI();
